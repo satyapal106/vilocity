@@ -1,0 +1,386 @@
+@import "color";
+
+.userProfile{
+    max-width: 1200px;
+    width: 100%;
+    padding: 65px 25px 0;
+
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 2%;
+
+    margin: auto;
+
+    margin-bottom: 80px;
+
+    .userDetails{
+        .greetings{
+            font-size: 60px;
+            margin-bottom: 12px;
+        }
+
+        .message{
+            p{
+                padding: 25px 15px;
+                background: rgb(255, 0, 0,.1);
+                width: 70%;
+            }
+        }
+    }
+
+    .userCreds{
+        margin: 20px 25px;
+        a{
+            color: $color_blue;
+            font-size: 20px;
+            vertical-align: middle;
+            margin-left: 12px;
+        }
+        .credsGrid{
+            display: grid;
+            grid-template-columns: 40% 60%;
+            margin: 12px 0;
+        }
+    }
+
+    .userChatSection{
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+
+        .live-chat-message{
+            margin-left: 25px;
+            color: $color_red;
+            margin-bottom: 12px;
+        }
+
+        @mixin center {
+            // position: absolute;
+            top: 50%;
+            left: 50%;
+            // transform: translate(-50%, -50%);
+        }
+
+        @mixin ball {
+        @include center;
+        content: '';
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .5);
+        z-index: 2;
+        margin-top: 4px;
+        animation: ball .45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+        }
+        /*--------------------
+        Chat
+        --------------------*/
+        .chat {
+        @include center;
+        width: 90%;
+        height: 300px;
+        max-height: 500px;
+        z-index: 2;
+        overflow: hidden;
+        background: rgba(252,209,7, .5);
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        }
+
+
+        /*--------------------
+        Chat Title
+        --------------------*/
+        .chat-title {
+        flex: 0 1 45px;
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 10px 10px 10px 50px;
+        
+        h1, h2 {
+            font-weight: normal;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            color: rgba(255, 255, 255, .5);
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .avatar {
+            position: absolute;
+            z-index: 1;
+            top: 8px;
+            left: 9px;
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            border: 2px solid rgba(255, 255, 255, 0.24);
+            
+            img {
+            width: 100%;
+            height: auto;
+            }
+        }
+        }
+
+
+        /*--------------------
+        Messages
+        --------------------*/
+        .messages {
+            flex: 1 1 auto;
+            color: rgba(255, 255, 255, .5);
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 25px;
+        
+        & .messages-content {
+            height: 101%;
+            width: 100%;
+            .msg {
+                display: flex;
+                flex-direction: column;
+
+                .messenger {
+                    font-size: 12px;
+                    margin-bottom: 4px;
+                }
+                p {
+                    margin: 0;
+                    color: black;
+                }
+                .msg-chat {
+                    background-color: #e2e2e2;
+                    border-radius: 0 15px 15px;
+                    padding: 10px;
+                    max-width: 70%;
+                }
+                .msg-chat p {
+                    color: #333;
+                    margin: 0;
+                }
+            }
+        }
+
+        
+        .message {
+            clear: both;
+            float: left;
+            padding: 6px 10px 7px;
+            border-radius: 10px 10px 10px 0;
+            background: rgba(0, 0, 0, .3);
+            margin: 8px 0;
+            font-size: 11px;
+            line-height: 1.4;
+            margin-left: 35px;
+            position: relative;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+            
+            .timestamp {
+            position: absolute;
+            bottom: -15px;
+            font-size: 9px;
+            color: rgba(255, 255, 255, .3);
+            }
+            
+            &::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            border-top: 6px solid rgba(0, 0, 0, .3);
+            left: 0;
+            border-right: 7px solid transparent;
+            }
+            
+            .avatar {
+            position: absolute;
+            z-index: 1;
+            bottom: -15px;
+            left: -35px;
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            border: 2px solid rgba(255, 255, 255, 0.24);
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+            }
+            
+            &.message-personal {
+            float: right;
+            color: #fff;
+            text-align: right;
+            background: linear-gradient(120deg, #248A52, #257287);
+            border-radius: 10px 10px 0 10px;
+            
+            &::before {
+                left: auto;
+                right: 0;
+                border-right: none;
+                border-left: 5px solid transparent;
+                border-top: 4px solid #257287;
+                bottom: -4px;
+            }
+            }
+            
+            &:last-child {
+            margin-bottom: 30px;
+            }
+            
+            &.new {
+            transform: scale(0);
+            transform-origin: 0 0;
+            animation: bounce 500ms linear both;
+            }
+            
+            &.loading {
+
+            &::before {
+                @include ball;
+                border: none;
+                animation-delay: .15s;
+            }
+
+            & span {
+                display: block;
+                font-size: 0;
+                width: 20px;
+                height: 10px;
+                position: relative;
+
+                &::before {
+                @include ball;
+                margin-left: -7px;
+                }
+
+                &::after {
+                @include ball;
+                margin-left: 7px;
+                animation-delay: .3s;
+                }
+            }
+            }
+            
+        }
+        }
+
+
+        /*--------------------
+        Message Box
+        --------------------*/
+        .message-box {
+        flex: 0 1 40px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        position: relative;
+        
+        & .message-input {
+            background: none;
+            border: none;
+            outline: none!important;
+            resize: none;
+            color: rgba(255, 255, 255);
+            font-size: 14px;
+            width: 100%;
+            height: 17px;
+            margin: 0;
+            padding-left: 20px;
+            width: 265px;
+        }
+        
+        textarea:focus:-webkit-placeholder{
+            color: transparent;
+        }
+        textarea::placeholder{
+            color: white;
+        }
+        
+        & .message-submit {
+            position: absolute;
+            z-index: 1;
+            top: 9px;
+            right: 24px;
+            color: $color_yellow_2;
+            border: none;
+            background: black;
+            font-size: 12px;
+            text-transform: uppercase;
+            line-height: 1;
+            padding: 8px 16px; 
+            border-radius: 10px;
+            outline: none!important;
+            transition: background .2s ease;
+            cursor: pointer;
+        }
+        }
+
+
+        /*--------------------
+        Custom Srollbar
+        --------------------*/
+        .mCSB_scrollTools {
+        margin: 1px -3px 1px 0;
+        opacity: 0;
+        }
+
+        .mCSB_inside > .mCSB_container {
+        margin-right: 0px;
+        padding: 0 10px;
+        }
+
+        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: rgba(0, 0, 0, 0.5)!important;
+        }
+
+
+        /*--------------------
+        Bounce
+        --------------------*/
+        @keyframes bounce { 
+        0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        14.11% { transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        18.72% { transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        24.32% { transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        29.93% { transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        35.54% { transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        41.04% { transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+        100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+        }
+
+
+        @keyframes ball { 
+        from {
+            transform: translateY(0) scaleY(.8);
+        }
+        to {
+            transform: translateY(-10px);
+        }
+        }
+    }
+}

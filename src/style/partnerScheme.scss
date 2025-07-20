@@ -1,0 +1,75 @@
+@import "color";
+
+.partnerSchemePage{
+    margin-bottom: 70px;
+    .breadcrumb_body{		
+        height: fit-content;
+        margin-top: 10px;
+        margin-bottom: 70px;
+    }
+    padding: 0 15px;
+	.title{
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	.partner-scheme-cards{
+		max-width: 1200px;
+		width: 100%;
+		margin: auto;
+		display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 10px;
+		overflow: hidden;
+
+		.scheme-card{
+			max-width: 270px;
+            height: 360px;
+			width: 100%;
+			position: relative;
+			background-color: black;
+            margin-bottom: 30px;
+
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: .5;
+				transition: opacity .5s ease;
+			}
+
+			.card-content{
+				position: absolute;
+				top: 75%;
+				left: 8%;
+				transition: all .5s ease;
+
+				.card-title{
+					color: white;
+					font-size: 34px;
+					font-weight: 600;
+				}
+
+				.card-p{
+					color: $color_yellow;
+					border-left: 2px solid #FFDE2E;
+					margin-left:15px;
+                    margin-right: 25px;
+					padding-top: 15px;
+                    padding-left: 12px;
+					opacity: 0;
+					transition: opacity .3s ease-in-out;
+				}
+			}
+
+			&:hover .card-content{
+				top: 30%;
+			}
+			&:hover img{
+				opacity: .2;
+			}
+			&:hover .card-p{
+				opacity: 1;
+			}
+		}
+	}
+}

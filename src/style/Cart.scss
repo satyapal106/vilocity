@@ -1,0 +1,121 @@
+.cartPage{
+  max-width: 1100px;
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: 65% 30%;
+  gap: 5%;
+
+  .cart-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color:#111111;
+    margin-bottom: 25px;
+  }
+
+  .cart-underline{
+    border-bottom: 1px solid #707072;
+    margin: 16px 0;
+  }
+
+  .strong{
+    font-weight:700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+  }
+  .soft-text{
+    font-weight:500;
+    font-size: 15px;
+    color: #707072;
+    line-height: 20px;
+  }
+
+  .pointer-disable{
+    pointer-events:none;
+    opacity: .5;
+  }
+
+  .bag{
+    .cart-items{
+      .cart-underline{
+        margin: 25px 0;
+        opacity: .5;
+      }
+      .item{
+        width: 100%;
+        display: flex;
+        gap: 18px;
+        img{
+          max-width: 130px;
+          width: 100%;
+          aspect-ratio: 1/1;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .item-details{
+          width: 100%;
+          .item-flex-details{
+            display: flex;
+            justify-content: space-between;
+
+            .strong{
+              margin-bottom: 4px;
+            }
+          }
+
+          .action-buttons{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 12px;
+
+            .quantity{
+              display: flex;
+              align-items: center;
+              .bi{
+                border: 1px solid black;
+                padding: 2px 4px;
+                border-radius: 50%;
+                cursor: pointer;
+                margin: 0 12px;
+              }
+            }
+
+            .primary-btn{
+              color: #17344a;
+              float: bottom;
+              font-size: 14px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .summery{
+    position: sticky;
+    top: 172px;
+    height: fit-content;
+    .p-content{
+      margin-bottom: 8px;
+      font-weight: 400;
+      font-size: 16px;
+      span{
+        float: right;
+      }
+    }
+    
+    .check-out{
+      .primary-btn{
+        font-size: 18px;
+        width: 100%;
+        margin: 25px 0;
+        color: #17344a;
+        font-weight: 400;
+        border-radius: 6px;
+      }
+    }
+  }
+}

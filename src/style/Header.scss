@@ -1,0 +1,205 @@
+@import "color";
+
+$searchBar-background: #edede9;
+
+nav {
+	position: sticky;
+	top: 0;
+	background-color: $background-color_white;
+	z-index: 50;
+	padding: 16px 0;
+	
+	.shadow{
+		// box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 6px -1px, rgba(0, 0, 0, 0.03) 0px 2px 4px -1px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+		// box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+	}
+
+	.searchBar{
+		position: absolute;
+		top: 7%;
+		width: 100%;
+		height: 90px;
+		background-color: $color_yellow;
+		opacity: 0;
+		z-index: -1;
+		transition: all .5s ease;
+
+		.search-input{
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.border-bottom{
+				border-bottom:1px solid rgba(0,0,0,0.5);
+				width: 60%;
+			}
+
+			input{
+				border: none;
+				width: 90%;
+				// border-bottom:1px solid rgba(0,0,0,0.5);
+				background-color: transparent;
+				outline: none;
+				padding: 5px;
+				font-size: 17px;
+			}
+			
+			.bi{
+				cursor: pointer;
+				font-size: 17px;
+				margin: 0 12px;
+				float: right;
+				&::before {
+					vertical-align: -webkit-baseline-middle;
+				}
+			}
+
+			.search-search{
+				color: $color_black_2;
+				font-weight: 500;
+				cursor: pointer;
+				margin: 0 12px;
+			}
+			
+		}
+	}
+	.searchBarShow{
+		opacity: 1;
+		top: 100%;
+		z-index: 10;
+	}
+
+	.theHeader {
+		max-width: 1660px;
+		display: grid;
+		grid-template-columns:20% auto 20%;
+		justify-content: space-between;
+		align-items: center;
+		margin: auto;
+		padding: 0 1%;
+
+		@media  screen and (max-width: 1200px) {
+			grid-template-columns:50% 50%;
+			padding: 0 5%;
+		}
+
+		.navItems {
+			justify-self: center;
+			a {
+				text-decoration: none;
+				margin: 0 16px;
+				vertical-align: sub;
+				color: $color_black;
+				transition: all .2s ease;
+				&:hover {
+					color: $color_yellow;
+				}
+			}
+			a.active {
+				color: $color_black;
+				border-bottom: medium solid $color_yellow;
+			}
+			@media screen and (max-width:1200px){
+				display: none;
+			}
+		}
+
+		.hamburgerMenu{
+			.bi{
+				font-size: 28px;
+    			margin: 0 30%;
+				cursor: pointer;
+			}
+
+			@media screen and (min-width:1199px) {
+				display: none;
+			}
+		}
+
+		.navLogo {
+			justify-self: center;
+			text-transform: uppercase;
+			text-align: center;
+			height: 70px;			
+			@media screen and (max-width:1199px) {
+				height: 60px;
+				justify-self: left;
+			}
+
+
+			img{
+				height: 100%;
+				width: 100%;
+				filter: brightness(.15);
+			}
+		}
+
+		.navButtons {
+			justify-self: center;
+			display: flex;
+			align-items: center;
+
+			@media screen and (max-width:1199px) {
+				justify-self: right;
+			}
+
+			.search{
+				cursor: pointer;
+				background-color: $searchBar-background;
+				border: 1px solid $searchBar-background;
+				padding: 6px 10px;
+				border-radius: 50%;
+				aspect-ratio: 1/1;
+				margin: 0 5px;
+				.bi{
+					vertical-align: middle;
+				}
+			}
+
+			.login {
+				padding: 0 5px;
+				vertical-align: middle;
+
+				@media screen and (width < 1200px) {
+					display: none;
+				}
+				.bi {
+					font-size: 21px;
+					vertical-align: middle;
+					padding-left: 5px;
+					transition: all .5s ease;
+				}
+				a {
+					color: $color_black;
+					vertical-align: sub;
+					background-color: $color_background_yellow;
+					padding: 10px 16px;
+					border-radius: 25px;
+				}
+			}
+
+			.navUtilButtons{
+				.active .bi{
+					color: $color_yellow !important;
+					font-size: 24px;
+					margin: 0 5px;
+				}
+				.bi{
+					font-size: 24px;
+					margin: 0 5px;
+					color: black;
+					cursor: pointer;
+				}
+
+				@media screen and (max-width:1200px){
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+

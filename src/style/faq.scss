@@ -1,0 +1,85 @@
+$color_1: white;
+$background-color_1: #777;
+$background-color_2: #555;
+$background-color_3: #f1f1f1;
+
+.faq{
+    margin: 40px 0;
+    min-height: 50vh;
+    .title {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .container1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+
+        .p-content{
+            margin: 6px 0;
+        }
+        p{
+            text-align: justify;
+        }
+    }
+    .btn1 {
+        margin: 10px;
+        flex: 1;
+        left: 40px;
+        max-width: 460px;
+        font-size: smaller;
+        min-width: 300px;
+    }
+    .btn2 {
+        margin: 10px;
+        flex: 1;
+        max-width: 460px;
+        font-size: smaller;
+        min-width: 300px;
+    }
+    .collapsible {
+        background-color: $background-color_1;
+        color: $color_1;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        &:hover {
+            background-color: $background-color_2;
+        }
+        &:after {
+            content: '\002B';
+            color: $color_1;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+    }
+    .active {
+        background-color: $background-color_2;
+        &:after {
+            content: "\2212";
+        }
+    }
+    .active .content{
+        display:none !important;
+    }
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease-out;
+        background-color: $background-color_3;
+    }
+    .show-content{
+        max-height: 100%;
+        padding: 10px 18px;
+    }
+    
+}

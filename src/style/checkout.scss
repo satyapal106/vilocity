@@ -1,0 +1,210 @@
+@import 'color';
+.checkout{
+  max-width: 1400px;
+  width: 100%;
+  margin: 70px auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: 46% 40%;
+  justify-content: space-around;
+
+  .checkout-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color:#111111;
+    margin-bottom: 30px;
+
+    .bi{
+      color: $color_yellow;
+    }
+  }
+
+  .strong{
+    font-weight:700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+  }
+  .soft-text{
+    font-weight:500;
+    font-size: 15px;
+    color: #707072;
+    line-height: 20px;
+  }
+
+  .cart-underline {
+    border-bottom: 1px solid #707072;
+    margin: 18px 0;
+  }
+
+  .order-summery{
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    .cart-items{
+      .cart-underline{
+        margin: 14px 0;
+        opacity: .4;
+      }
+      .item{
+        width: 100%;
+        display: flex;
+        gap: 18px;
+        img{
+          max-width: 90px;
+          width: 100%;
+          aspect-ratio: 1/1;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .item-details{
+          width: 100%;
+          .item-flex-details{
+            display: flex;
+            justify-content: space-between;
+
+            .strong{
+              margin-bottom: 4px;
+            }
+          }
+
+          .action-buttons{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 12px;
+
+            .quantity{
+              display: flex;
+              align-items: center;
+              .bi{
+                border: 1px solid black;
+                padding: 2px 4px;
+                border-radius: 50%;
+                cursor: pointer;
+                margin: 0 12px;
+              }
+            }
+
+            .primary-btn{
+              color: #17344a;
+              float: bottom;
+              font-size: 14px;
+            }
+          }
+
+        }
+      }
+    }
+    .cart-total{
+      margin: 0 12px;
+      .strong{
+        font-size: 18px;
+        margin-bottom: 6px;
+        span{
+          float: right;
+        }
+      }
+      .cart-underline{
+        margin: 12px 0;
+      }
+    }
+  }
+
+  .address-payment{
+    .address{
+      .pin {
+        margin-bottom: 12px;
+        span{
+          float: right;
+        }
+      }
+      .address-details{
+        margin-bottom: 12px;
+        p{
+          margin-bottom: 4px;
+        }
+      }
+  
+      .edit-add-address{
+        a{
+          color: $color_yellow;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+  
+    .payment{
+      margin-top: 30px;
+  
+      .coupen{
+        p{
+          margin-bottom: 6px;
+        }
+        .coupen-input{
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+          width: 100%;
+          input{
+            width: 70%;
+            font-size: 16px;
+            padding: 4.5px;
+            outline: none;
+            border:1px solid $color_yellow;
+          }
+          .primary-btn{
+            width: 20%;
+            color: $color_black_2;
+            &:hover{
+              border-radius: initial;
+            }
+          }
+        }
+      }
+      
+      .payment-methods{
+        form{
+          .payment-input{
+            margin: 12px 0;
+            font-size: 18px;
+
+            label{
+              padding: 0 12px;
+              cursor: pointer;
+            }
+          }
+          .allow-payment{
+            width: 100%;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .primary-btn{
+              font-size: 16px;
+              font-weight: 500;              
+              text-transform: uppercase;
+              width: 30%;
+            }
+            .warning{
+              opacity: 0;
+            }
+            .warning-show{
+              opacity: 1;
+              color: red;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
