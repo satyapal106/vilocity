@@ -1,7 +1,7 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 
 import logo from '../assets/logo/velocity-logo1.png';
-import '../style/header.scss'
+import '../style/Header.scss'
 import toast from 'react-hot-toast';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { SignInContext } from '../App';
